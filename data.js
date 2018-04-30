@@ -43,7 +43,7 @@ export const tweetsData = [
             {
                 handle: `@StackOverflower ☣️`,
                 profilePic: `images/overflow.png`,
-                tweetText: `No. Onviosuly not. Go get a job in McDonald's.`,
+                tweetText: `No. Obviosuly not. Go get a job in McDonald's.`,
             },
             {
                 handle: `@YummyCoder64`,
@@ -56,4 +56,3 @@ export const tweetsData = [
         uuid: '8hy671sff-c0f5-4545-9c4b-1237gyys45',
     },     
 ]
-
