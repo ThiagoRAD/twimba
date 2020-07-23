@@ -10,7 +10,19 @@ document.addEventListener('click', function(e){
     if(e.target.dataset.like){
        handleLikeClick(e.target.dataset.like) 
     }
+    if(e.target.dataset.retweet){
+      handleRetweetClick(e.target.dataset.retweet) 
+    }
 })
+
+function handleRetweetClick(tweetId){ 
+    const targetTweetObj = tweetsData.filter(function(tweet){
+        return tweet.uuid === tweetId
+    })[0]
+    targetTweetObj.isRetweeted ? targetTweetObj.retweets-- : targetTweetObj.retweets++
+    targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted
+    render()
+}
 
 function handleLikeClick(tweetId){ 
     const targetTweetObj = tweetsData.filter(function(tweet){
@@ -18,17 +30,6 @@ function handleLikeClick(tweetId){
     })[0]
     targetTweetObj.isLiked ? targetTweetObj.likes-- : targetTweetObj.likes++
     targetTweetObj.isLiked = !targetTweetObj.isLiked
-
-/*
-Challenge:
-1. When a tweet is liked, it's 'isLiked' property
-   should be set to true.
-2. When a tweet is unliked, it's 'isLiked' property
-   should be set to false and its 'likes' count
-   should be decremented.
-*/   
-    targetTweetObj.likes++
-    
     render()
 }
 
